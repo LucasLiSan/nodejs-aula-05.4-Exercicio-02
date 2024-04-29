@@ -1,0 +1,31 @@
+<%- include ('partials/header.ejs') %>
+<%- include ('partials/nav.ejs') %>
+<main class="clientsBody">
+    <h1>Clientes</h1>
+    <table  class="clientTable">
+        <thead>
+            <tr>
+                <th></th>
+                <th>NOME:</th>
+                <th>C.P.F.</th>
+                <th>ENDEREÇO</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% clientes.forEach(function(cliente){ %>
+                <tr>
+                    <td><img src="<%= cliente.profilePic %>" alt=""></td>
+                    <td><%= cliente.nome %></td>
+                    <td><%= cliente.cpf %></td>
+                    <td><%= cliente.endereco %></td>
+                </tr>
+            <% }) %>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th colspan="4"></th>
+            </tr>
+        </tfoot>
+    </table>
+</main>
+<%- include ('partials/footer.ejs') %>

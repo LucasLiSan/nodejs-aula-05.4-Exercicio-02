@@ -1,0 +1,29 @@
+<%- include ('partials/header.ejs') %>
+<%- include ('partials/nav.ejs') %>
+<div class="containerMenu">
+    <h1 class="titleUser">Bem vindo a Loja.inc</h1>
+    <div class="menuOpts">
+        <a class="opt1" href="/clientes">
+            <div class="img1">
+                <img src="/imgs/clientes.webp" alt="Icon clientes">
+            </div>
+            <label class="btnOpt1">CLIENTES</label>
+        </a>
+        <a class="opt2" href="/produtos">
+            <div class="img2">
+                <img src="/imgs/produtos.webp" alt="Icon produtos">
+            </div>
+            <label class="btnOpt2">PRODUTOS</label>
+        </a>
+        <a class="opt3" href="/carrinho">
+            <div class="img3">
+                <img src="/imgs/pedidos.webp" alt="Icon pedidos">
+            </div>
+            <label class="btnOpt3">PEDIDOS</label>
+        </a>
+    </div>
+    <div class="btnSair">
+        <a href="/index">SAIR</a>
+    </div>
+</div>
+<%- include ('partials/footer.ejs') %>

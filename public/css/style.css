@@ -1,0 +1,617 @@
+body {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #c2c2c2;
+}
+
+.login-form {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.containerIndex {
+  width: 100%;
+  max-width: 400px;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.card {
+  width: 85%;
+  background-color: #333;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+}
+
+h2 {
+  text-align: center;
+  color: #fff;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  padding: 10px;
+  margin-bottom: 12px;
+  border: 1px solid #555;
+  border-radius: 4px;
+  transition: border-color 0.3s ease-in-out;
+  outline: none;
+  color: #000000;
+}
+
+input:focus {
+  border-color: #3498db;
+}
+
+button {
+  background-color: #3498db;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+.topMenuBar {
+  width: 100%;
+  height: 7%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #000007;
+}
+
+.topMenu {
+  width: 90%;
+  display: inline-flex;
+  flex-direction: row;
+  margin: 0;
+  padding: 0;
+}
+
+.topMenu a {
+  text-decoration: none;
+  width: 100%;
+}
+
+.topMenu li {
+  list-style: none;
+  text-transform: uppercase;
+  color: #ffffff;
+  font-size: 1.5rem;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  align-content: center;
+}
+
+.topMenuBar li:hover {
+  background-color: #c2c2c2;
+  color: #000000;
+}
+
+.topMenu li:active {
+  background-color: #00ff00;
+  color: #000000;
+}
+
+.containerMenu {
+  height: 90%;
+  display: grid;
+  grid-template:
+    ". titleUser. " 10%
+    ". menuOpts ." 45%
+    ". btnSair ." 10%
+    /20% 1fr 20%
+  ;
+  align-content: center;
+}
+
+.titleUser {
+  grid-area: titleUser;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  align-content: center;
+  text-transform: uppercase;
+  font-size: 3rem;
+}
+
+.menuOpts {
+  grid-area: menuOpts;
+  display: grid;
+  align-content: center;
+  grid-template:
+    ". opt1 ." 30%
+    ". opt2 ." 30%
+    ". opt3 ." 30% 
+    /1fr 50% 1fr
+  ;
+}
+
+.opt1, .opt2, .opt3 {
+  display: grid;
+  text-decoration: none;
+  color: #000000;
+  border-left: solid 2px;
+  border-right: solid 2px;
+}
+
+.opt1 {
+  grid-area: opt1;
+  grid-template: 
+    "img1 label1" 100%
+    /1fr 1fr
+  ;
+  border-top: solid 2px;
+}
+
+.opt2 {
+  grid-area: opt2;
+  grid-template: 
+    "img2 label2" 100%
+    /1fr 1fr
+  ;
+}
+
+.opt3 {
+  grid-area: opt3;
+  grid-template: 
+    "img3 label3" 100%
+    /1fr 1fr
+  ;
+  border-bottom: solid 2px;
+}
+
+.opt1:hover, .opt2:hover, .opt3:hover, .btnSair a:hover {
+  background: #ffffff;
+  color: #000000;
+}
+
+.opt1:active, .opt2:active, .opt3:active, .btnSair a:active {
+  background: #00ff00;
+  color: #000000;
+}
+
+.img1 {
+  grid-area: img1;
+}
+
+.img2 {
+  grid-area: img2;
+}
+
+.img3 {
+  grid-area: img3;
+}
+
+.img1, .img2, .img3 {
+  align-content: center;
+  text-align: center;
+}
+
+.img1 > img, .img2 > img, .img3 > img{
+  height: 80%;
+}
+
+.btnOpt1 {
+  grid-area: label1;
+}
+
+.btnOpt2 {
+  grid-area: label2;
+}
+
+.btnOpt3 {
+  grid-area: label3;
+}
+
+.btnOpt1, .btnOpt2, .btnOpt3 {
+  font-size: 2rem;
+  font-weight: bolder;
+  align-content: center;
+}
+
+.btnSair {
+  grid-area: btnSair;
+  width: 100%;
+  height: 100%;
+  align-content: center;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.btnSair a {
+  width: 25%;
+  height: 85%;
+  align-content: center;
+  background-color: #000000;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bolder;
+}
+
+.clientsBody {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+}
+
+.clientsBody h1 {
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 2rem;
+}
+
+.clientTable {
+  width: 80%;
+  border-collapse: collapse;
+}
+
+.clientTable thead > tr {
+  height: 60px;
+  background: #555555;
+  color: #ffffff;
+  font-size: 1.3rem;
+}
+
+.clientTable td {
+  width: 25%;
+  align-content: center;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.clientTable tbody > tr:nth-child(odd) {
+  background: #acacac;
+}
+
+.clientTable tbody > tr:hover {
+  background: #ffffff;
+}
+
+.clientTable img {
+  width: 40%;
+  border-radius: 45px;
+}
+
+.produtBody {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.produtBody h1 {
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 2rem;
+  grid-area: titleProd;
+  margin: 0;
+  align-content: center;
+}
+
+.containerProdutos {
+  width: 100vw;
+  height: 100vh;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-content: flex-start;
+}
+
+.cardProdutos {
+  width: 15%;
+  height: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  border: dashed 1px;
+}
+
+.cardProdutos label {
+  height: 30%;
+  width: 90%;
+  align-content: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.cardProdutos p {
+  width: 100%;
+  height: 10%;
+  text-align: center;
+  margin: 0;
+  align-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.preco {
+  color: #ff0000;
+}
+
+.cat {
+  color: #000000;
+}
+
+.imgProd {
+  height: 50%;
+  text-align: center;
+  align-content: center;
+}
+
+.imgProd img {
+  height: 95%;
+}
+
+.containerProdutosList {
+  width: 100%;
+  height: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.header {
+  width: 90%;
+  display: grid;
+  grid-template: 
+    "titleProd titleProd btnList btnGrid" 100%
+    / 1fr 1fr 5% 5%
+  ;
+  align-items: center;
+  justify-items: center;
+}
+
+.btnList {
+  grid-area: btnList;
+}
+
+.btnGrid {
+  grid-area: btnGrid;
+}
+
+.btnGrid, .btnList {
+  width: 70%;
+  height: 80%;
+}
+
+.btnGrid:hover, .btnList:hover {
+  background: #ffffff;
+}
+
+.btnGrid img, .btnList img {
+  width: 100%;
+  height: 100%;
+}
+
+.cardProdutosList {
+  width: 90%;
+  height: 30%;
+  display: inline-flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  border: dashed 1px;
+  margin: 5px;
+}
+
+.cardProdutosList:nth-child(odd), .cardProdutos:nth-child(odd) {
+  background-color: #acacac;
+}
+
+.cardProdutosList:hover, .cardProdutos:hover {
+  background-color: #ffffff;
+}
+
+.imgProdList {
+  width: 15%;
+  height: 100%;
+  align-content: center;
+  text-align: center;
+}
+
+.imgProdList img {
+  width: 80%;
+}
+
+.descProdList {
+  width: 70%;
+  height: 100%;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  align-content: center;
+}
+
+.precoCatProd {
+  width: 15%;
+  height: 100%;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.precoCatProd p {
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.catProd {
+  height: 10%;
+}
+
+.precoProd {
+  align-content: center;
+  height: 90%;
+  color: #ff0000;
+}
+
+.gray {
+  background: #acacac;
+}
+
+.transparent {
+  background: none;
+}
+
+.pedidosBody {
+  width: 100vw;
+  height: 100vh;
+}
+
+.pedidosBody h1 {
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 2rem;
+}
+
+.pedidosContainer {
+  width: 95%;
+  border: solid 2px;
+}
+
+.pedidos {
+  width: 100%;
+  height: 45px;
+  align-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  flex-direction: row;
+  align-items: center;
+}
+
+.pedidos label, .valorTotal label {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  font-weight: bold;
+  background: #ffff00;
+  height: 40px;
+  align-content: center;
+  width: 110px;
+  text-align: center;
+}
+
+.pedidos span, .valorTotal span {
+  font-size: 1.5rem;
+  color: #ff0000;
+  background: #ffff00;
+  height: 40px;
+  align-content: center;
+  width: 140px;
+}
+
+.pedidosLista {
+  width: 95%;
+}
+
+.valorTotal {
+  width: 100%;
+  height: 45px;
+  display: flex;
+  align-content: center;
+  text-align: end;
+  flex-direction: row;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.cardPedidos {
+  width: 100%;
+  height: 30%;
+  display: inline-flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  border: dashed 1px;
+  margin: 5px;
+}
+
+.cardPedidos:nth-child(odd), .cardPedidos:nth-child(odd) {
+  background-color: #acacac;
+}
+
+.cardPedidos:hover, .cardPedidos:hover {
+  background-color: #ffffff;
+}
+
+.imgPedidos {
+  width: 15%;
+  height: 100%;
+  align-content: center;
+  text-align: center;
+}
+
+.imgPedidos img {
+  width: 80%;
+}
+
+.descPedidos {
+  width: 70%;
+  height: 100%;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  align-content: center;
+}
+
+.precoCatPedidos {
+  width: 15%;
+  height: 100%;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.precoCatPedidos p {
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.precoPedidos {
+  align-content: center;
+  height: 90%;
+  color: #ff0000;
+}
+
+.catPedid {
+  height: 10%;
+  text-transform: uppercase;
+}

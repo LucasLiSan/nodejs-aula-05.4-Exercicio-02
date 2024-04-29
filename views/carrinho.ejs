@@ -1,0 +1,39 @@
+<%- include ('partials/header.ejs') %>
+<%- include ('partials/nav.ejs') %>
+<main class="pedidosBody">
+    <h1>Pedidos</h1>
+    <% pedidos.forEach(function(pedido){ %>
+        <div class="pedidosContainer">
+            <div class="pedidos">
+                <label for="">Pedido:</label>
+                <span><%= pedido.numPedido %></span>
+            </div>
+            <% for (let i = 0; i < 3 && i < produtos.length; i++) { 
+                let produto = produtos[i]; %>
+                <div class="pedidosLista">
+                    <div class="cardPedidos">
+                        <div class="imgPedidos">
+                            <img src="<%= produto.imgProd %>" alt="">
+                        </div>
+                        <div class="descPedidos">
+                            <label for=""><%= produto.nomeProd %></label>
+                        </div>
+                        <div class="precoCatPedidos">
+                            <div class="precoPedidos">
+                                <span><%= produto.preco.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'}) %></span>    
+                            </div>
+                            <div class="catPedid">
+                                <span><%= produto.categoria %></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <% } %>
+            <div class="valorTotal">
+                <label for="">Total:</label>
+                <span><%= pedido.valor.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'}) %></span>
+            </div>
+        </div>
+    <% }) %>
+</main>
+<%- include ('partials/footer.ejs') %>
