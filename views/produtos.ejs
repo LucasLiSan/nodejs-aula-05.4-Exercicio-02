@@ -17,10 +17,10 @@
                 </div>
                 <div class="precoCatProd">
                     <div class="precoProd">
-                        <p><%= produto.preco.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'}) %></p>    
+                        <p><%= produto.precoProd.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'}) %></p>    
                     </div>
                     <div class="catProd">
-                        <p><%= produto.categoria %></p>
+                        <p><%= produto.catProd %></p>
                     </div>
                 </div>
             </div>
@@ -39,8 +39,8 @@
                 <img src="<%= produto.imgProd %>" alt="">
             </div>
             <label for=""><%= produto.nomeProd %></label>
-            <p class="preco"><%= produto.preco.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'}) %></p>
-            <p class="cat"><%= produto.categoria %></p>
+            <p class="preco"><%= produto.precoProd.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'}) %></p>
+            <p class="cat"><%= produto.catProd %></p>
         </div>
     <% }) %>
     

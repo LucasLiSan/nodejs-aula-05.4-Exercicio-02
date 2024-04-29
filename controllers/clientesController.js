@@ -1,7 +1,16 @@
 import express from "express";
+import Cliente from "../models/clientes.js";
 const router = express.Router();
 
-router.get("/clientes", (req,res) => {
+router.get("/clientes", function(req,res) {
+    Cliente.findAll().then(clientes => {
+        res.render("clientes", {
+            clientes: clientes
+        })
+    })
+});
+
+/*router.get("/clientes", (req,res) => {
     const clientes = [
         {profilePic: "imgs/profilePic/BillGates.webp" , nome: "William Gates", cpf: "123.456.789-10", endereco: "Rua Seattle"},
         {profilePic: "imgs/profilePic/LinusTorvalds.webp" ,nome: "Linus Torvalds", cpf: "456.789.012-13", endereco: "Rua Helsinque"},
@@ -15,6 +24,6 @@ router.get("/clientes", (req,res) => {
     res.render("clientes", {
         clientes : clientes
     });
-});
+});*/
 
 export default router;

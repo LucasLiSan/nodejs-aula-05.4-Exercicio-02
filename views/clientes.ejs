@@ -9,6 +9,7 @@
                 <th>NOME:</th>
                 <th>C.P.F.</th>
                 <th>ENDEREÇO</th>
+                <th colspan="2"></th>
             </tr>
         </thead>
         <tbody>
@@ -18,6 +19,8 @@
                     <td><%= cliente.nome %></td>
                     <td><%= cliente.cpf %></td>
                     <td><%= cliente.endereco %></td>
+                    <td>EDITAR</td>
+                    <td>DELETAR</td>
                 </tr>
             <% }) %>
         </tbody>
@@ -27,5 +30,20 @@
             </tr>
         </tfoot>
     </table>
+    <form class="formCadastroClientes" action="" method="POST">
+        <div class="nomeCliente">
+            <label for="nome">Nome do cliente</label>
+            <input type="text" name="nome" id="nome" placeholder="insira o nome do cliente" required>
+        </div>
+        <div class="cpfClientes">
+            <label for="nome">Nome do cliente</label>
+            <input type="text" name="nome" id="nome" placeholder="insira o nome do cliente" required>
+        </div>
+        <div class="enderecoClientes">
+            <label for="nome">Nome do cliente</label>
+            <input type="text" name="nome" id="nome" placeholder="insira o nome do cliente" required>
+        </div>
+        <input class="btnCadastroClientes" type="submit" value="CADASTRAR">
+    </form>
 </main>
 <%- include ('partials/footer.ejs') %>

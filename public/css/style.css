@@ -34,7 +34,7 @@ h2 {
   color: #fff;
 }
 
-form {
+.formIndex {
   display: flex;
   flex-direction: column;
 }
@@ -296,6 +296,38 @@ button:hover {
 .clientTable img {
   width: 40%;
   border-radius: 45px;
+}
+
+.formCadastroClientes {
+  width: 80%;
+  display: grid;
+  grid-template:
+    "Nome Cpf Endereco" 60%
+    ". btnCadastrar ." 40%
+    / 1fr 1fr 1fr
+  ;
+}
+
+.nomeClientes {
+  grid-area: Nome;
+  display: grid;
+  grid-template:
+    "Nome Cpf Endereco" 60%
+    ". btnCadastrar ." 40%
+    / 1fr 1fr 1fr
+  ;
+}
+
+.cpfClientes {
+  grid-area: Cpf;
+}
+
+.enderecoClientes {
+  grid-area: Endereco;
+}
+
+.btnCadastroClientes {
+  grid-area: btnCadastrar;
 }
 
 .produtBody {

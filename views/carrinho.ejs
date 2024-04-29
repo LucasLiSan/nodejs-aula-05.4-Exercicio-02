@@ -20,10 +20,10 @@
                         </div>
                         <div class="precoCatPedidos">
                             <div class="precoPedidos">
-                                <span><%= produto.preco.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'}) %></span>    
+                                <span><%= produto.precoProd.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'}) %></span>    
                             </div>
                             <div class="catPedid">
-                                <span><%= produto.categoria %></span>
+                                <span><%= produto.catProd %></span>
                             </div>
                         </div>
                     </div>
@@ -31,7 +31,7 @@
             <% } %>
             <div class="valorTotal">
                 <label for="">Total:</label>
-                <span><%= pedido.valor.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'}) %></span>
+                <span><%= pedido.valorPedido.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'}) %></span>
             </div>
         </div>
     <% }) %>

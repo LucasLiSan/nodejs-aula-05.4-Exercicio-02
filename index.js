@@ -1,5 +1,18 @@
 import express from "express";
+import connection from "./config/sequelize-config.js";
 const app = express();
+
+connection.authenticate().then(() => {
+    console.log("Conexão com o banco realizada com sucesso!")
+}).catch((error) => {
+    console.log(error)
+});
+
+connection.query(`CREATE DATABASE IF NOT EXISTS loja;`).then(() => {
+    console.log("Banco de dados criado!")
+}).catch((error) => {
+    console.log(error)
+});
 
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
