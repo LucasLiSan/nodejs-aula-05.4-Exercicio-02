@@ -16,6 +16,8 @@ connection.query(`CREATE DATABASE IF NOT EXISTS loja;`).then(() => {
 
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
+app.use(express.urlencoded({extended:false}));
+app.use(express.json());
 
 import clientesController from "./controllers/clientesController.js";
 import pedidosController from "./controllers/pedidosController.js";

@@ -19,8 +19,8 @@
                     <td><%= cliente.nome %></td>
                     <td><%= cliente.cpf %></td>
                     <td><%= cliente.endereco %></td>
-                    <td>EDITAR</td>
-                    <td>DELETAR</td>
+                    <td><a class="editarCliente" href="/clientes/edit/<%= cliente.id %>">EDITAR</a></td>
+                    <td><a class="deletarCliente" href="/clientes/delete/<%= cliente.id %>" onclick="return confirm('Tem certeza que deseja excluir o cadastro do cliente: <%= cliente.nome %>?')">EXCLUIR</a></td>
                 </tr>
             <% }) %>
         </tbody>
@@ -30,20 +30,20 @@
             </tr>
         </tfoot>
     </table>
-    <form class="formCadastroClientes" action="" method="POST">
-        <div class="nomeCliente">
+    <form class="formCadastroClientes" action="/clientes/new" method="POST">
+        <div class="nomeClientes">
             <label for="nome">Nome do cliente</label>
             <input type="text" name="nome" id="nome" placeholder="insira o nome do cliente" required>
         </div>
         <div class="cpfClientes">
-            <label for="nome">Nome do cliente</label>
-            <input type="text" name="nome" id="nome" placeholder="insira o nome do cliente" required>
+            <label for="cpf">CPF do cliente</label>
+            <input type="text" name="cpf" id="cpf" placeholder="insira o cpf do cliente" required>
         </div>
         <div class="enderecoClientes">
-            <label for="nome">Nome do cliente</label>
-            <input type="text" name="nome" id="nome" placeholder="insira o nome do cliente" required>
+            <label for="endereco">Endereço do cliente</label>
+            <input type="text" name="endereco" id="endereco" placeholder="insira o endereco do cliente" required>
         </div>
-        <input class="btnCadastroClientes" type="submit" value="CADASTRAR">
+        <input class="btnCadastroClientes" type="submit" onclick="return confirm('Cadastrar cliente novo?')" value="CADASTRAR">
     </form>
 </main>
 <%- include ('partials/footer.ejs') %>

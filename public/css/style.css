@@ -179,12 +179,12 @@ button:hover {
   border-bottom: solid 2px;
 }
 
-.opt1:hover, .opt2:hover, .opt3:hover, .btnSair a:hover {
+.opt1:hover, .opt2:hover, .opt3:hover, .btnSair a:hover, .btnCadastroClientes:hover, .btnEditarClientes:hover {
   background: #ffffff;
   color: #000000;
 }
 
-.opt1:active, .opt2:active, .opt3:active, .btnSair a:active {
+.opt1:active, .opt2:active, .opt3:active, .btnSair a:active, .btnCadastroClientes:active, .btnEditarClientes:active {
   background: #00ff00;
   color: #000000;
 }
@@ -306,28 +306,83 @@ button:hover {
     ". btnCadastrar ." 40%
     / 1fr 1fr 1fr
   ;
+  justify-items: center;
+}
+
+.formCadastroClientes div {
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
 }
 
 .nomeClientes {
   grid-area: Nome;
   display: grid;
   grid-template:
-    "Nome Cpf Endereco" 60%
-    ". btnCadastrar ." 40%
-    / 1fr 1fr 1fr
+    "labelNome" 60%
+    "inputNome" 40%
+    / 1fr
   ;
+  justify-items: center;
+}
+
+.nomeClientes label {
+  grid-area: labelNome;
+}
+.nomeClientes input {
+  grid-area: inputNome;
+  width: 55%;
 }
 
 .cpfClientes {
   grid-area: Cpf;
+  display: grid;
+  grid-template:
+    "labelCpf" 60%
+    "inputCpf" 40%
+    / 1fr
+  ;
+  justify-items: center;
+}
+
+.cpfClientes label {
+  grid-area: labelCpf;
+}
+.cpfClientes input {
+  grid-area: inputCpf;
+  width: 55%;
 }
 
 .enderecoClientes {
   grid-area: Endereco;
+  display: grid;
+  grid-template:
+    "labelEndereco" 60%
+    "inputEndereco" 40%
+    / 1fr
+  ;
+  justify-items: center;
 }
 
-.btnCadastroClientes {
-  grid-area: btnCadastrar;
+.enderecoClientes label {
+  grid-area: labelEndereco;
+}
+.enderecoClientes input {
+  grid-area: inputEndereco;
+  width: 55%;
+}
+
+.btnCadastroClientes, .btnEditarClientes {
+    grid-area: btnCadastrar;
+    margin: 0.5rem 0 0 0;
+    width: 8rem;
+    height: 2rem;
+    background: #000000;
+    color: #ffffff;
+    font-weight: bold;
+    border-radius: 0;
 }
 
 .produtBody {

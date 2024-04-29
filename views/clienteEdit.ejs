@@ -1,0 +1,21 @@
+<%- include ('partials/header.ejs') %>
+<%- include ('partials/nav.ejs') %>
+
+<form class="formCadastroClientes" action="/clientes/update/<%= cliente.id %>" method="POST">
+    <input type="text" name="id" id="id" placeholder="id" hidden value="<%= cliente.id %>">
+    <div class="nomeClientes">
+        <label for="nome">Nome do cliente</label>
+        <input type="text" name="nome" id="nome" value="<%= cliente.nome %>" required>
+    </div>
+    <div class="cpfClientes">
+        <label for="cpf">CPF do cliente</label>
+        <input type="text" name="cpf" id="cpf" value="<%= cliente.cpf %>" required>
+    </div>
+    <div class="enderecoClientes">
+        <label for="endereco">Endereço do cliente</label>
+        <input type="text" name="endereco" id="endereco" value="<%= cliente.endereco %>" required>
+    </div>
+    <input class="btnEditarClientes" type="submit" onclick="return confirm('Atualizar cadastro de <%= cliente.nome %>?')" value="ATUALZIAR">
+</form>
+
+<%- include ('partials/footer.ejs') %>
