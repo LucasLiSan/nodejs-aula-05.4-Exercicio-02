@@ -9,7 +9,8 @@
                 <th>NOME:</th>
                 <th>C.P.F.</th>
                 <th>ENDEREÇO</th>
-                <th colspan="2"></th>
+                <th></th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -19,8 +20,12 @@
                     <td><%= cliente.nome %></td>
                     <td><%= cliente.cpf %></td>
                     <td><%= cliente.endereco %></td>
-                    <td><a class="editarCliente" href="/clientes/edit/<%= cliente.id %>">EDITAR</a></td>
-                    <td><a class="deletarCliente" href="/clientes/delete/<%= cliente.id %>" onclick="return confirm('Tem certeza que deseja excluir o cadastro do cliente: <%= cliente.nome %>?')">EXCLUIR</a></td>
+                    <td class="btnsActionsClientes">
+                        <a class="editarCliente" href="/clientes/edit/<%= cliente.id %>">EDITAR</a>
+                    </td>
+                    <td class="btnsActionsClientes">
+                        <a class="deletarCliente" href="/clientes/delete/<%= cliente.id %>" onclick="return confirm('Tem certeza que deseja excluir o cadastro do cliente: <%= cliente.nome %>?')">EXCLUIR</a>
+                    </td>
                 </tr>
             <% }) %>
         </tbody>
