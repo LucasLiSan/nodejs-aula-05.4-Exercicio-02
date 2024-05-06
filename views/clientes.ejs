@@ -20,11 +20,15 @@
                     <td><%= cliente.nome %></td>
                     <td><%= cliente.cpf %></td>
                     <td><%= cliente.endereco %></td>
-                    <td class="btnsActionsClientes">
-                        <a class="editarCliente" href="/clientes/edit/<%= cliente.id %>">EDITAR</a>
+                    <td>
+                        <div class="btnsActionsClientes">
+                            <a class="editarCliente" href="/clientes/edit/<%= cliente.id %>">EDITAR</a>
+                        </div>
                     </td>
-                    <td class="btnsActionsClientes">
-                        <a class="deletarCliente" href="/clientes/delete/<%= cliente.id %>" onclick="return confirm('Tem certeza que deseja excluir o cadastro do cliente: <%= cliente.nome %>?')">EXCLUIR</a>
+                    <td>
+                        <div class="btnsActionsClientes">
+                            <a class="deletarCliente" href="/clientes/delete/<%= cliente.id %>" onclick="return confirm('Tem certeza que deseja excluir o cadastro do cliente: <%= cliente.nome %>?')">EXCLUIR</a>
+                        </div>
                     </td>
                 </tr>
             <% }) %>

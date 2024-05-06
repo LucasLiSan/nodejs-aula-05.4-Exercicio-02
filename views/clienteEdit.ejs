@@ -1,7 +1,7 @@
 <%- include ('partials/header.ejs') %>
 <%- include ('partials/nav.ejs') %>
 
-<form class="formCadastroClientes" action="/clientes/update/<%= cliente.id %>" method="POST">
+<form class="formCadastroClientes formEditClientes" action="/clientes/update/<%= cliente.id %>" method="POST">
     <input type="text" name="id" id="id" placeholder="id" hidden value="<%= cliente.id %>">
     <div class="nomeClientes">
         <label for="nome">Nome do cliente</label>

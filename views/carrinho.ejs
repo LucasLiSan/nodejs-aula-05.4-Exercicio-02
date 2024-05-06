@@ -7,6 +7,16 @@
             <div class="pedidos">
                 <label for="">Pedido:</label>
                 <span><%= pedido.numPedido %></span>
+                <span>
+                    <a class="editarProduto" href="/carrinho/edit/<%= pedido.id %>">
+                        <span class="material-symbols-outlined">edit</span>
+                    </a>
+                </span>
+                <span>
+                    <a class="deletarProduto" href="/carrinho/delete/<%= pedido.id %>" onclick="return confirm('Tem certeza que deseja excluir o pedido: <%= pedido.numPedido %>?')">
+                        <span class="material-symbols-outlined">delete</span>
+                    </a>
+                </span>
             </div>
             <% for (let i = 0; i < 3 && i < produtos.length; i++) { 
                 let produto = produtos[i]; %>
@@ -35,5 +45,16 @@
             </div>
         </div>
     <% }) %>
+    <form class="formCadastroProd" action="/carrinho/new" method="POST">
+        <div class="nomeProd">
+            <label for="numPedido">Número do pedido</label>
+            <input type="text" name="numPedido" id="numPedido" placeholder="insira o número do pedido" required>
+        </div>
+        <div class="valorProd">
+            <label for="valorPedido">Valor do pedido</label>
+            <input type="text" name="valorPedido" id="valorPedido" placeholder="insira o valor do pedido" required>
+        </div>
+        <input class="btnCadastroClientes" type="submit" onclick="return confirm('Cadastrar produto novo?')" value="CADASTRAR">
+    </form>
 </main>
 <%- include ('partials/footer.ejs') %>

@@ -21,10 +21,32 @@
                     </div>
                     <div class="catProd">
                         <p><%= produto.catProd %></p>
+                        <span><a class="editarProduto" href="/produtos/edit/<%= produto.id %>"><span class="material-symbols-outlined">
+                            edit
+                            </span></a></span>
+                        <span><a class="deletarProduto" href="/produtos/delete/<%= produto.id %>" onclick="return confirm('Tem certeza que deseja excluir o cadastro do produto: <%= produto.nomeProd %>?')"><span class="material-symbols-outlined">
+                            delete
+                            </span></a></span>
+
                     </div>
                 </div>
             </div>
         <% }) %>
+        <form class="formCadastroProd" action="/produtos/new" method="POST">
+            <div class="nomeProd">
+                <label for="nomeProd">Descrição do produto</label>
+                <input type="text" name="nomeProd" id="nomeProd" placeholder="insira a descrição do produto" required>
+            </div>
+            <div class="valorProd">
+                <label for="precoProd">Valor do produto</label>
+                <input type="text" name="precoProd" id="precoProd" placeholder="insira o valor" required>
+            </div>
+            <div class="categoriaProd">
+                <label for="catProd">Categoria do produto</label>
+                <input type="text" name="catProd" id="catProd" placeholder="insira a categoria" required>
+            </div>
+            <input class="btnCadastroClientes" type="submit" onclick="return confirm('Cadastrar produto novo?')" value="CADASTRAR">
+        </form>
     </div>
 </div>
 <div id="switchGrid" class="containerProdutos" style="display: none;">
@@ -41,9 +63,34 @@
             <label for=""><%= produto.nomeProd %></label>
             <p class="preco"><%= produto.precoProd.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'}) %></p>
             <p class="cat"><%= produto.catProd %></p>
+            <span>
+                <a class="editarProduto" href="/produtos/edit/<%= produto.id %>">
+                    <span class="material-symbols-outlined">edit</span>
+                </a>
+            </span>
+            <span>
+                <a class="deletarProduto" href="/produtos/delete/<%= produto.id %>" onclick="return confirm('Tem certeza que deseja excluir o cadastro do produto: <%= produto.nomeProd %>?')">
+                    <span class="material-symbols-outlined">delete</span>
+                </a>
+            </span>
         </div>
     <% }) %>
-    
+    <form class="formCadastroProd" action="/produtos/new" method="POST">
+        <div class="nomeProd">
+            <label for="nomeProd">Descrição do produto</label>
+            <input type="text" name="nomeProd" id="nomeProd" placeholder="insira a descrição do produto" required>
+        </div>
+        <div class="valorProd">
+            <label for="precoProd">Valor do produto</label>
+            <input type="text" name="precoProd" id="precoProd" placeholder="insira o valor" required>
+        </div>
+        <div class="categoriaProd">
+            <label for="catProd">Categoria do produto</label>
+            <input type="text" name="catProd" id="catProd" placeholder="insira a categoria" required>
+        </div>
+        <input class="btnCadastroClientes" type="submit" onclick="return confirm('Cadastrar produto novo?')" value="CADASTRAR">
+    </form>
 </div>
+
 </main>
 <%- include ('partials/footer.ejs') %>

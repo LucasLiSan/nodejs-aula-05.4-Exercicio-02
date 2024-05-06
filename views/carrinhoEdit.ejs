@@ -1,0 +1,17 @@
+<%- include ('partials/header.ejs') %>
+<%- include ('partials/nav.ejs') %>
+
+<form class="formCadastroClientes formEditClientes" action="/carrinho/update/<%= pedido.id %>" method="POST">
+    <input type="text" name="id" id="id" placeholder="id" hidden value="<%= pedido.id %>">
+    <div class="nomeClientes">
+        <label for="numPedido">Numero do Pedido</label>
+        <input type="text" name="numPedido" id="numPedido" value="<%= pedido.numPedido %>" required>
+    </div>
+    <div class="cpfClientes">
+        <label for="valorPedido">Valor Pedido</label>
+        <input type="text" name="valorPedido" id="valorPedido" value="<%= pedido.valorPedido %>" required>
+    </div>
+    <input class="btnEditarClientes" type="submit" onclick="return confirm('Atualizar pedido nº: <%= pedido.numPedido %>?')" value="ATUALZIAR">
+</form>
+
+<%- include ('partials/footer.ejs') %>

@@ -1,0 +1,21 @@
+<%- include ('partials/header.ejs') %>
+<%- include ('partials/nav.ejs') %>
+
+<form class="formCadastroClientes formEditClientes" action="/produtos/update/<%= produto.id %>" method="POST">
+    <input type="text" name="id" id="id" placeholder="id" hidden value="<%= produto.id %>">
+    <div class="nomeClientes">
+        <label for="nomeProd">Nome do Produto</label>
+        <input type="text" name="nomeProd" id="nomeProd" value="<%= produto.nomeProd %>" required>
+    </div>
+    <div class="cpfClientes">
+        <label for="precoProd">Valor do produto</label>
+        <input type="text" name="precoProd" id="precoProd" value="<%= produto.precoProd %>" required>
+    </div>
+    <div class="enderecoClientes">
+        <label for="catProd">Categoria do produto</label>
+        <input type="text" name="catProd" id="catProdendereco" value="<%= produto.catProd %>" required>
+    </div>
+    <input class="btnEditarClientes" type="submit" onclick="return confirm('Atualizar cadastro de <%= produto.nomeProd %>?')" value="ATUALZIAR">
+</form>
+
+<%- include ('partials/footer.ejs') %>

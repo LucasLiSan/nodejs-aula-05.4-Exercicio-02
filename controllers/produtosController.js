@@ -10,6 +10,65 @@ router.get("/produtos", (req,res) => {
     })
 });
 
+//CADASTRAR
+router.post("/produtos/new", (req,res) => {
+    const nomeProd = req.body.nomeProd;
+    const precoProd = req.body.precoProd.replace(',', '.');
+    const catProd = req.body.catProd;
+    Produto.create({
+        nomeProd : nomeProd,
+        precoProd : precoProd,
+        catProd : catProd
+    }).then(() => {
+        res.redirect("/produtos")
+    }).catch((error) => {
+        console.log(error)
+    })
+});
+//EDITAR
+router.get("/produtos/edit/:id", (req,res) => {
+    const id = req.params.id;
+    Produto.findByPk(id).then(function(produto) {
+        res.render("produtosEdit", {
+            produto : produto
+        })
+    }).catch((error) => {
+        console.log(error)
+    })
+});
+//ATUALIZAR BANCO DE DADOS
+router.post("/produtos/update/:id", (req,res) => {
+    const id = req.body.id;
+    const nomeProd = req.body.nomeProd;
+    const precoProd = req.body.precoProd.replace(',', '.');
+    const catProd = req.body.catProd;
+    Produto.update(
+        {
+            nomeProd : nomeProd,
+            precoProd : precoProd,
+            catProd : catProd
+        },
+        {where: {id : id}}
+    ).then(() => {
+        res.redirect("/produtos")
+    }).catch((error) => {
+        console.log(error)
+    })
+});
+//DELETAR
+router.get("/produtos/delete/:id", (req,res) => {
+    const id = req.params.id;
+    Produto.destroy({
+        where: {
+            id : id
+        }
+    }).then(() => {
+        res.redirect("/produtos")
+    }).catch((error) => {
+        console.log(error)
+    })
+});
+
 /*var produtos = [
     {imgProd: "imgs/placaDeVideoRTX4060.webp", nomeProd: "Placa de Vídeo RTX 4060 VENTUS 2x Black OC MSI NVIDIA GeForce, 8GB GDDR6, DLSS, Ray Tracing", preco: 2149.99, categoria: "hardware"},
     {imgProd: "imgs/processadorAMDRyzen5-4600G.webp", nomeProd: "Processador AMD Ryzen 5 4600G, 3.7GHz (4.2GHz Max Turbo), Cache 11MB, AM4, Vídeo Integrado", preco: 599.99, categoria: "hardware"},

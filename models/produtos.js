@@ -18,7 +18,7 @@ const Produto = connection.define('produtos',
     },
     imgProd:{
         type: Sequelize.STRING,
-        allowNull:false
+        allowNull:true
     }
 });
 
